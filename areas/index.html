@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Areas</title>
+    <style>
+
+        body {
+            font-family: Arial;
+        }
+
+        .container {
+            display: grid;
+            /*grid-template-columns: 25% 50% 25%;*/
+            /*grid-template-rows: 300px 300px;*/
+            /*grid-template: 100px 100px/25% 50% 25%;*/
+            /*grid-template: 100px 100px/repeat(3, 1fr);*/
+            grid-template: repeat(3, 1fr)/repeat(2, 1fr);
+            /*grid-column-gap: 5px;*/
+            /*grid-row-gap: 10px;*/
+            grid-gap: 10px;
+            height: 100vh;
+            grid-template-areas: "header header" "left contenido" "footer footer";
+        }
+
+        .header {
+            grid-area: header;
+        }
+        .left {
+            grid-area: left;
+        }
+        .contenido {
+            grid-area: contenido;
+        }
+        .footer {
+            grid-area: footer;
+        }
+
+        .item {
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+            /*margin-right: 10px;*/
+        }
+
+        .item:nth-of-type(4) {
+            background: blue;
+            color: white;
+            overflow: auto;
+            display: grid;
+            grid-template: 100px 100px/25% 50% 25%;
+        }
+
+
+    </style>
+</head>
+<body>
+<section class="container">
+    <div class="item header">header</div>
+    <div class="item left">left</div>
+    <div class="item contenido">contenido</div>
+    <div class="item footer">footer</div>
+</section>
+</body>
+</html>
